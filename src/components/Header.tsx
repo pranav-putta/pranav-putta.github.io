@@ -16,6 +16,7 @@ const AnimatedTouchableOpacity = Animated.createAnimatedComponent(
 
 interface Props {
   scrollToProjects: () => void;
+  scrollDown: () => void;
 }
 interface State {}
 
@@ -124,6 +125,7 @@ export class Header extends React.Component<Props, State> {
                 left: "10%",
                 bottom: "10%",
               }}
+              onPress={this.props.scrollDown}
             >
               <Image
                 style={{ width: 22, height: 22 }}

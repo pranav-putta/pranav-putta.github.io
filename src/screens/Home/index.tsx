@@ -20,6 +20,9 @@ export function Home() {
           scrollToProjects={() => {
             parallax?.scrollTo(1);
           }}
+          scrollDown={() => {
+            parallax?.scrollTo(1);
+          }}
         />
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0}>
