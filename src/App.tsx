@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import { Platform, StyleSheet, View, Text } from "react-native";
+import { Navigation } from "./navigation";
+class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Navigation />
+      </View>
+    );
+  }
 }
 
+const height = Platform.OS == "web" ? "100vh" : "100%";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: height,
+    width: "100%",
+  },
+});
 export default App;

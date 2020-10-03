@@ -2,24 +2,44 @@
   "name": "pranavputta22.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://pranavputta22.github.io/pranavputta22.github.io",
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.7.5",
+    "@react-navigation/stack": "^5.9.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native": "^0.63.3",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-parallax-scroll-view": "^0.21.3",
+    "react-native-reanimated": "^1.13.1",
+    "react-native-safe-area-context": "^3.1.8",
+    "react-native-screens": "^2.11.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-transformer": "^0.14.3",
+    "react-native-web": "^0.13.14",
+    "react-scripts": "3.4.3",
+    "react-spring": "^8.0.27"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "typescript": "~3.7.2"
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-native": "^0.63.23",
+    "gh-pages": "^3.1.0",
+    "typescript": "~3.9.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
