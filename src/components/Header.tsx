@@ -101,6 +101,7 @@ export class Header extends React.Component<Props, State> {
               height: "100vh",
               resizeMode: "center",
               opacity: this.imageOpacity,
+              marginLeft: '15%'
             }}
             source={require("../assets/images/t2.jpg")}
           />
