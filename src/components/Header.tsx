@@ -39,7 +39,7 @@ export class Header extends React.Component<Props, State> {
     });
     this.line = this.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, 205],
+      outputRange: [0, 200],
     });
     this.borderRadius = this.animation.interpolate({
       inputRange: [0, 1],
@@ -93,7 +93,7 @@ export class Header extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <ParallaxLayer offset={0} speed={0.4}>
+        <ParallaxLayer offset={0} speed={0.2}>
           <Animated.Image
             style={{
               flex: 1,
@@ -106,7 +106,7 @@ export class Header extends React.Component<Props, State> {
             source={require("../assets/images/t2.jpg")}
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0}>
+        <ParallaxLayer offset={0} speed={-0.5}>
           <Animated.View
             style={[styles.headerContainer, { opacity: this.headerOpacity }]}
           >
@@ -120,7 +120,7 @@ export class Header extends React.Component<Props, State> {
                     fontSize: 40,
                     fontWeight: "bold",
                     letterSpacing: 10,
-                    marginLeft: 20,
+                    marginLeft: 10,
                   }}
                 >
                   PUTTA
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "sans-serif",
     fontSize: 40,
-    fontWeight: "500",
+    fontWeight: "300",
     letterSpacing: 10,
   },
   headerCaptionText: {
