@@ -39,11 +39,11 @@ export class Header extends React.Component<Props, State> {
     });
     this.line = this.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, 160],
+      outputRange: [0, 205],
     });
     this.borderRadius = this.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, 10],
+      outputRange: [0, 5],
     });
     this.imageOpacity = this.secondAnimation.interpolate({
       inputRange: [0, 1],
@@ -55,20 +55,20 @@ export class Header extends React.Component<Props, State> {
     return (
       <AnimatedTouchableOpacity
         style={{
-          width: 120,
-          height: 40,
+          width: 150,
+          height: 50,
           borderRadius: this.borderRadius,
           backgroundColor: bgColor,
           marginLeft: 2,
           marginRight: 20,
-          marginTop: 40,
+          marginTop: 50,
           justifyContent: "center",
           alignItems: "center",
           borderColor: "white",
         }}
         onPress={click}
       >
-        <Text style={{ fontWeight: "bold", fontSize: 15, color: "white" }}>
+        <Text style={{ fontWeight: "bold", fontSize: 17, color: "white" }}>
           {label}
         </Text>
       </AnimatedTouchableOpacity>
@@ -93,7 +93,7 @@ export class Header extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <ParallaxLayer offset={0} speed={0.25}>
+        <ParallaxLayer offset={0} speed={0.4}>
           <Animated.Image
             style={{
               flex: 1,
@@ -101,7 +101,7 @@ export class Header extends React.Component<Props, State> {
               height: "100vh",
               resizeMode: "center",
               opacity: this.imageOpacity,
-              marginLeft: '15%'
+              marginLeft: "15%",
             }}
             source={require("../assets/images/t2.jpg")}
           />
@@ -111,14 +111,28 @@ export class Header extends React.Component<Props, State> {
             style={[styles.headerContainer, { opacity: this.headerOpacity }]}
           >
             <View style={[styles.headerTextContainer]}>
-              <Text style={styles.headerText}>PRANAV PUTTA</Text>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.headerText}>PRANAV</Text>
+                <Text
+                  style={{
+                    color: "white",
+                    fontFamily: "sans-serif",
+                    fontSize: 40,
+                    fontWeight: "bold",
+                    letterSpacing: 10,
+                    marginLeft: 20,
+                  }}
+                >
+                  PUTTA
+                </Text>
+              </View>
               <Animated.View
                 style={{
                   width: this.line,
                   marginTop: 5,
-                  height: 4,
+                  height: 2,
                   marginLeft: 2,
-                  backgroundColor: colors.primary,
+                  backgroundColor: colors.accent,
                 }}
               />
               <View style={{ flexDirection: "row" }}>
@@ -172,7 +186,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "sans-serif",
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: "500",
     letterSpacing: 10,
   },
   headerCaptionText: {
