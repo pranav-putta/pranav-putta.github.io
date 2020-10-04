@@ -22,7 +22,9 @@ interface State {}
 
 export class Header extends React.Component<Props, State> {
   private animation: Animated.Value;
+  private secondAnimation: Animated.Value;
   private headerOpacity: Animated.AnimatedInterpolation;
+  private imageOpacity: Animated.AnimatedInterpolation;
   private line: Animated.AnimatedInterpolation;
   private borderRadius: Animated.AnimatedInterpolation;
 
@@ -30,6 +32,7 @@ export class Header extends React.Component<Props, State> {
     super(props);
 
     this.animation = new Animated.Value(0);
+    this.secondAnimation = new Animated.Value(0);
     this.headerOpacity = this.animation.interpolate({
       inputRange: [0, 1],
       outputRange: [0, 1],
@@ -41,6 +44,10 @@ export class Header extends React.Component<Props, State> {
     this.borderRadius = this.animation.interpolate({
       inputRange: [0, 1],
       outputRange: [0, 10],
+    });
+    this.imageOpacity = this.secondAnimation.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0, 1],
     });
   }
 
@@ -69,11 +76,16 @@ export class Header extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    Animated.sequence([
+    Animated.stagger(600, [
       Animated.timing(this.animation, {
         toValue: 1,
         useNativeDriver: true,
         delay: 500,
+      }),
+      Animated.timing(this.secondAnimation, {
+        toValue: 1,
+        useNativeDriver: true,
+        duration: 1000,
       }),
     ]).start();
   }
@@ -82,12 +94,13 @@ export class Header extends React.Component<Props, State> {
     return (
       <View style={styles.container}>
         <ParallaxLayer offset={0} speed={0.25}>
-          <Image
+          <Animated.Image
             style={{
               flex: 1,
               width: "100%",
               height: "100vh",
               resizeMode: "center",
+              opacity: this.imageOpacity,
             }}
             source={require("../assets/images/t2.jpg")}
           />
