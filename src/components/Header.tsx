@@ -101,9 +101,9 @@ export class Header extends React.Component<Props, State> {
               height: "100vh",
               resizeMode: "center",
               opacity: this.imageOpacity,
-              marginLeft: "15%",
+              marginLeft: "10%",
             }}
-            source={require("../assets/images/t2.jpg")}
+            source={require("../assets/images/me4.jpg")}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={-0.5}>
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     width: "100%",
     //maxWidth: 1000,
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0)",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
     position: "absolute",
     justifyContent: "center",
     alignItems: "center",
