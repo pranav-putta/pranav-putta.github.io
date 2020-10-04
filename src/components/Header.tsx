@@ -103,7 +103,7 @@ export class Header extends React.Component<Props, State> {
               opacity: this.imageOpacity,
               marginLeft: "10%",
             }}
-            source={require("../assets/images/me4.jpg")}
+            source={require("../assets/images/me5.jpg")}
           />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={-0.5}>
